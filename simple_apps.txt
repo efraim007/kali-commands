@@ -1,0 +1,46 @@
+THC hydra
+
+hydra -l xxxxxxxx@gmail.com -P pw.txt -s 465 -S -v -V -t 4 smtp.gmail.com smtp
+hydra -l root -p admin 10.10.10.10 -t 4 ssh
+
+password generate...
+/sbin/john --wordlist=user --rules --stdout > passwords
+
+hydra -s 22 -l username -P passwords -4 ssh://10.10.100.10
+
+
+
+WFUZZ
+
+wfuzz -w wfuzz/wordlist/general/common.txt "https://lite.charityalfa.io/FUZZ"
+wfuzz -c -z file,wfuzz/wordlist/general/common.txt --hc 404 "http://cryptogcoin.com/FUZZ"
+
+
+NMAP with nse scripts
+
+nmap -sV --script=vulscan/vulscan.nse domain.com
+
+NMAP
+
+Ports
+nmap -p 1-65535 localhost
+nmap -p 80,443 8.8.8.8
+
+Multiple ip
+
+nmap 1.1.1.1 8.8.8.8
+
+Range
+nmap -p 8.8.8.0/28
+
+nmap  8.8.8.*
+
+Popular ports
+nmap --top-ports 20 192.168.1.106
+
+Output set
+nmap -oN output.txt domain.com
+nmap -oX output.xml domain.com
+
+Agressive
+nmap -A -T4 domain.com
